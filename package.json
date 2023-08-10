@@ -28,7 +28,7 @@
     "docs-deploy": "gh-pages -d docs/dist -t true",
     "docs-build-deploy": "pnpm run docs-build && pnpm run docs-deploy",
     "pub": "pnpm run build && lerna publish",
-    "lint": "eslint --ignore-pattern **/__tests__/* --ignore-pattern **/dist/* \"src/**/*.{vue,js,ts,tsx}\"",
+    "lint": "eslint --ignore-path .eslintignore \"src/**/*.{vue,js,ts,tsx}\"",
     "lint-fix": "pnpm run lint -- --fix",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "release": "np"
@@ -48,7 +48,6 @@
     "@types/qs": "^6.9.7",
     "@types/whatwg-fetch": "^0.0.33",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
-    "@typescript-eslint/parser": "^4.14.1",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "axios": "^0.21.4",

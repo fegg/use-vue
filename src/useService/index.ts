@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import type { UseServiceOptions } from './types';
+import { UseServiceOptions } from './types';
 
 export function useService(options: UseServiceOptions) {
   if (!options) {

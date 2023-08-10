@@ -1,35 +1,35 @@
 <script setup>
-  import { useService } from '../index';
-  import { onMounted } from 'vue-demi';
+import { useService } from '../index';
+import { onMounted } from 'vue-demi';
 
-  const { state, service } = useService({
-    defaultData: [],
-    validateEmpty: data => data.length === 0,
-    service: () => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve([
-            {
-              id: 1,
-              name: '<NAME>'
-            },
-            {
-              id: 2,
-              name: '<NAME>'
-            },
-            {
-              id: 3,
-              name: '<NAME>'
-            }
-          ]);
-        }, 1000);
-      });
-    },
-  });
+const { state, service } = useService({
+  defaultData: [],
+  validateEmpty: data => data.length === 0,
+  service: () => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve([
+          {
+            id: 1,
+            name: '<NAME>'
+          },
+          {
+            id: 2,
+            name: '<NAME>'
+          },
+          {
+            id: 3,
+            name: '<NAME>'
+          }
+        ]);
+      }, 1000);
+    });
+  },
+});
 
-  onMounted(() => {
-    service();
-  });
+onMounted(() => {
+  service();
+});
 </script>
 
 <template>
