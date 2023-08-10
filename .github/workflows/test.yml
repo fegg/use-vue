@@ -1,14 +1,21 @@
 name: Unit Test
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
   test:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [16.x, 14.x]
+        node-version: [ 16.x, 14.x ]
 
     steps:
       - uses: actions/checkout@v1
