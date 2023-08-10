@@ -26,15 +26,13 @@
       "jest"
     ],
     "skipLibCheck": true,
-    // "files": "src/index.ts",
     "emitDeclarationOnly": true,
     "declarationDir": "dist",
-    "rootDir": ".",
     "paths": {
       "@/*": [
         "src/*"
       ],
-      "ahooks-vue": [
+      "use-vue": [
         "src/index.ts"
       ]
     }
