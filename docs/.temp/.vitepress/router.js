@@ -1,7 +1,7 @@
 const { kebabCase } = require('lodash');
 
 const Router = {
-  Service: ['useService'],
+  Service: ['useService', 'useServiceLoading'],
 };
 
 function getRouterConfig(langPrefix = '/') {
