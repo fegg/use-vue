@@ -3,11 +3,13 @@ import { useServiceLoading } from '../index';
 
 describe('useServiceLoading', () => {
   it('useServiceLoading service ok', () => {
-    expect(useServiceLoading({
-      service: () => {
-        return Promise.resolve(1);
-      },
-    })).toBeDefined();
+    expect(
+      useServiceLoading({
+        service: () => {
+          return Promise.resolve(1);
+        },
+      }),
+    ).toBeDefined();
   });
 
   it('useServiceLoading service loading ok', async () => {

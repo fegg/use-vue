@@ -1,7 +1,9 @@
 import { ref } from 'vue';
 import { UseServiceLoadingOptions, UseServiceLoadingResult } from './types';
 
-export function useServiceLoading(options: UseServiceLoadingOptions): UseServiceLoadingResult {
+export function useServiceLoading(
+  options: UseServiceLoadingOptions,
+): UseServiceLoadingResult {
   if (!options || !options.service) {
     throw new Error('请检查 useServiceLoading 参数');
   }
