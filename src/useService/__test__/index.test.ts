@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { useService } from '../index';
 
 describe('useService', () => {

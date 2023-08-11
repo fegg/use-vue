@@ -4,23 +4,23 @@ import { onMounted } from 'vue-demi';
 
 const { state, service } = useService({
   defaultData: [],
-  validateEmpty: data => data.length === 0,
+  validateEmpty: (data) => data.length === 0,
   service: () => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve([
           {
             id: 1,
-            name: '<NAME>'
+            name: '<NAME>',
           },
           {
             id: 2,
-            name: '<NAME>'
+            name: '<NAME>',
           },
           {
             id: 3,
-            name: '<NAME>'
-          }
+            name: '<NAME>',
+          },
         ]);
       }, 1000);
     });
@@ -41,9 +41,7 @@ onMounted(() => {
         {{ item.name }}
       </li>
     </ul>
-    <div>
-      是否有错误：{{ !state.error ? '无' : '有' }}
-    </div>
+    <div>是否有错误：{{ !state.error ? '无' : '有' }}</div>
   </div>
 </template>
 

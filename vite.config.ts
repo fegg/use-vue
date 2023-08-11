@@ -1,20 +1,13 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
+import { defineConfig } from 'vite'
+import path from 'path';
 
 /**
  * @type {import('vite').UserConfig}
  */
-export default {
+export default defineConfig({
   optimizeDeps: {
     include: [
-      'intersection-observer',
-      'localforage',
       'lodash',
-      'resize-observer-polyfill',
-      'screenfull',
-      // 'vue-demi',
-      'mockjs',
-      'axios',
     ],
     exclude: ['vue-demi'],
   },
@@ -22,12 +15,12 @@ export default {
     minify: true,
     lib: {
       entry: path.resolve('./src/index.ts'),
-      name: 'ahooks-vue',
+      name: 'use-vue',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue-demi', 'axios'],
+      external: ['vue-demi'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
@@ -37,4 +30,4 @@ export default {
       },
     },
   },
-};
+});

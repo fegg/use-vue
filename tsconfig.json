@@ -22,9 +22,6 @@
       "esnext",
       "dom"
     ],
-    "types": [
-      "jest"
-    ],
     "skipLibCheck": true,
     "emitDeclarationOnly": true,
     "declarationDir": "dist",
