@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { UseServiceLoadingOptions, UseServiceLoadingResult } from '@/useServiceLoading/types';
+import { UseServiceLoadingOptions, UseServiceLoadingResult } from './types';
 
 export function useServiceLoading(options: UseServiceLoadingOptions): UseServiceLoadingResult {
   if (!options || !options.service) {
