@@ -1,3 +1,3 @@
-export * from './useService';
-export * from './useServiceLoading';
+export * from './use_service';
+export * from './use_service_loading';
 

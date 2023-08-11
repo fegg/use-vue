@@ -1,10 +1,10 @@
 ---
 map:
   path: /use-service-loading
-  realPath: src/useServiceLoading/index.en-US.md
+  realPath: src/index/index.en-US.md
 ---
 
-# useServiceLoading
+# index
 
 ::: tip
 新增的 hook。

@@ -3,7 +3,7 @@ map:
   path: /use-service-loading
 ---
 
-# useServiceLoading
+# index
 
 ::: tip
 新增的 hook。
