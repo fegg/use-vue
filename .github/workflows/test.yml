@@ -5,7 +5,7 @@ on: [ push, pull_request ]
 jobs:
   test:
     env:
-      MY_SECRET: ${{secrets.use_vue_token}}
+      ACCESS_TOKEN: ${{secrets.use_vue_token}}
       USER_NAME: fegg
       USER_EMAIL: lulin666000@gmail.com
 
@@ -36,6 +36,9 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Publish docs
+        with:
+          github_token: $ACCESS_TOKEN
+          publish_dir: ./docs/dist
         run: |
           git config --local user.name $USER_NAME
           git config --local user.email $USER_EMAIL
