@@ -35,7 +35,7 @@ onMounted(() => {
 <template>
   <div>
     <h1>{{ state.data.length }}</h1>
-    <button @click="service">Refresh</button>
+    <button @click="service">更新</button>
     <ul>
       <li v-for="item in state.data" :key="item.id">
         {{ item.name }}
