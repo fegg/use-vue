@@ -68,6 +68,7 @@ jobs:
 
       - name: Publish docs
         run: |
+          pnpm docs-build
           cd $PUBLIC_DIR_DOC
           git init
           git config --local user.name $USER_NAME
