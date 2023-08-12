@@ -4,10 +4,40 @@ on: [ push, pull_request ]
 
 jobs:
   test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 16.x ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint
+      - name: Test
+        run: pnpm test
+      - name: Build
+        run: pnpm build
+
+  deploy:
     env:
+      GITHUB_REPOSITORY: use-vue
       ACCESS_TOKEN: ${{secrets.use_vue_token}}
       USER_NAME: fegg
       USER_EMAIL: lulin666000@gmail.com
+      PUBLIC_DIR_DOC: ./docs/dist
 
     runs-on: ubuntu-latest
 
@@ -35,8 +65,17 @@ jobs:
         run: pnpm test
       - name: Build
         run: pnpm build
+
       - name: Publish docs
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: $ACCESS_TOKEN
-          publish_dir: ./docs/dist
+        run: |
+          cd $PUBLIC_DIR_DOC
+          git init
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
+          git status
+          git remote add origin https://$ACCESS_TOKEN@github.com/$GITHUB_REPOSITORY.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "deploy to Github pages"
+          git push origin gh-pages
+          echo 🤘 deploy gh-pages complete.
