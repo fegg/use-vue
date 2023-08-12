@@ -36,11 +36,9 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: $ACCESS_TOKEN
           publish_dir: ./docs/dist
-        run: |
-          git config --local user.name $USER_NAME
-          git config --local user.email $USER_EMAIL
-          pnpm docs-build-deploy
+        run:
           echo 🤘 deploy gh-pages complete.
