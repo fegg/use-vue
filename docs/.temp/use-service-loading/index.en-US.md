@@ -1,7 +1,7 @@
 ---
 map:
   path: /use-service-loading
-  realPath: src/index/index.en-US.md
+  realPath: src/use_service_loading/index.zh-CN.md
 ---
 
 # index

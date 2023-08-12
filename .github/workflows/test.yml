@@ -4,6 +4,11 @@ on: [ push, pull_request ]
 
 jobs:
   test:
+    env:
+      MY_SECRET: ${{secrets.use_vue_token}}
+      USER_NAME: fegg
+      USER_EMAIL: lulin666000@gmail.com
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,3 +35,9 @@ jobs:
         run: pnpm test
       - name: Build
         run: pnpm build
+      - name: Publish docs
+        run: |
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
+          pnpm docs-build-deploy
+          echo 🤘 deploy gh-pages complete.
