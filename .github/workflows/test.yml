@@ -34,7 +34,7 @@ jobs:
   deploy:
     env:
       GITHUB_REPOSITORY: use-vue
-      ACCESS_TOKEN: ${{secrets.use_vue_token}}
+      ACCESS_TOKEN: ${{ secrets.use_vue_token }}
       USER_NAME: fegg
       USER_EMAIL: lulin666000@gmail.com
       PUBLIC_DIR_DOC: ./docs/dist
@@ -74,7 +74,7 @@ jobs:
           git config --local user.name $USER_NAME
           git config --local user.email $USER_EMAIL
           git status
-          git remote add origin https://$ACCESS_TOKEN@github.com/$GITHUB_REPOSITORY.git
+          git remote add origin https://$ACCESS_TOKEN@github.com/$USER_NAME/$GITHUB_REPOSITORY.git
           git checkout -b gh-pages
           git add --all
           git commit -m "deploy to Github pages"
