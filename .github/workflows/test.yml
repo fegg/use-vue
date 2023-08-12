@@ -68,6 +68,10 @@ jobs:
 
       - name: Publish docs
         run: |
+          echo $ACCESS_TOKEN
+          echo $USER_NAME
+          echo $USER_EMAIL
+          echo $GITHUB_REPOSITORY
           pnpm docs-build
           cd $PUBLIC_DIR_DOC
           git init
