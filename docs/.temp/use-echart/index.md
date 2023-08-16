@@ -1,10 +1,10 @@
 ---
 map:
-  path: /use-service
-  realPath: src/use_service/index.zh-CN.md
+  path: /use-echart
+  realPath: src/use_echart/index.zh-CN.md
 ---
 
-# useService
+# useEChart
 
 ::: tip
 新增的 hook。
@@ -17,7 +17,7 @@ map:
 <demo src="./demo/demo.vue"
 language="vue"
 title="基础用法"
-desc="查询数据">
+desc="基础折线图渲染例子">
 </demo>
 
 ## API

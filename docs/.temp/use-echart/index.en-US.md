@@ -1,10 +1,10 @@
 ---
 map:
-  path: /use-service
-  realPath: src/use_service/index.zh-CN.md
+  path: /use-echart
+  realPath: src/use_echart/index.zh-CN.md
 ---
 
-# useService
+# useEChart
 
 ::: tip
 新增的 hook。

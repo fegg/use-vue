@@ -11,7 +11,7 @@ vue 常用的一些业务 hooks，基础 hooks 请更多使用 vueuse
 ## 安装
 
 ```
-yarn add @yuerpkg/use-vue
+pnpm install @yuerpkg/use-vue
 ```
 
 ## 使用

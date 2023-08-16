@@ -1,7 +1,7 @@
 ---
 map:
   path: /use-service
-  realPath: src/use_service/index.en-US.md
+  realPath: src/use_service/index.zh-CN.md
 ---
 
 # useService
