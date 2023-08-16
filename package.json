@@ -1,6 +1,6 @@
 {
   "name": "@yuerpkg/use-vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "use-vue",
   "types": "dist/src/index.d.ts",
   "repository": "https://github.com/fegg/use-vue.git",

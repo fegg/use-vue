@@ -24,7 +24,7 @@ export function useEChart() {
   // chart dom ref
   const chartRef = ref(null);
   // chart 实例
-  let chart: EChartsType = null;
+  let chart: EChartsType | null = null;
 
   /**
    * @description 初始化 echarts 实例
@@ -49,7 +49,7 @@ export function useEChart() {
    * @param delay 是否延迟执行，具体延迟多少，默认 0
    * @returns 取消监听事件的钩子函数
    */
-  function autoResize(eventId, delay) {
+  function autoResize(eventId?: string, delay?: number) {
     const handler = _.isNil(delay) ? autoResizeHandler :  _.debounce(autoResizeHandler, delay);
     const eventName = _.isNil(eventId) ? 'resize' : `resize.${eventId}`;
 
